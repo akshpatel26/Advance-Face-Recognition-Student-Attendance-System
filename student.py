@@ -328,7 +328,7 @@ class Student:
         self.fetch_data()
         
         
-        #=================Function decration ===============#
+    #=========================Function decration ==========================#
         
          
     def add_data(self):
@@ -363,7 +363,7 @@ class Student:
             except Exception as es:
                 messagebox.showerror("Error",f"Due To :{str(es)}",parent=self.root)                                                                                               
                                                                                                   
-   #=================fetch data===================#     
+   #=================fetch data===========================#     
     def fetch_data(self):
         conn=mysql.connector.connect(host="localhost",username="root",password="AP_18!P",database="face_recognizer")
         my_cursor=conn.cursor()
@@ -378,7 +378,7 @@ class Student:
             conn.commit()
         conn.close()    
                                                                                                      
-    #======================get cursor===============#
+    #======================get cursor=======================#
     def get_cursor(self,event=""):
         cursor_focus=self.student_table.focus()
         content=self.student_table.item(cursor_focus)
@@ -411,7 +411,7 @@ class Student:
                     conn=mysql.connector.connect(host="localhost",username="root",password="AP_18!P",database="face_recognizer")
                     my_cursor=conn.cursor()
                 
-                # Fixed SQL query with correct column names matching your database
+                # Fixed SQL query with correct column names matching your database.
                     my_cursor.execute("""Update student set 
                        Dep=%s,
                        course=%s,

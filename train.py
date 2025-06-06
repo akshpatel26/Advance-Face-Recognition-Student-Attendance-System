@@ -25,7 +25,8 @@ class Train:
         lbl=Label(title_lbl,font=("times new roman",14,"bold"),bg="white",fg="blue")
         lbl.place(x=0,y=0,width=130,height=60)
         time()      
-                # Close button function
+        
+        #Close button function
         def close_and_return():
             self.root.destroy()  # Close current window
         
@@ -52,6 +53,7 @@ class Train:
         f_lbl = Label(self.root, image=self.photoimg_bottom)
         f_lbl.place(x=0, y=440, width=1530, height=325)
 
+
     def train_classifier(self):
         data_dir = "data"
         if not os.path.exists(data_dir):
@@ -64,7 +66,7 @@ class Train:
 
         for image_path in path:
             try:
-                img = Image.open(image_path).convert('L')  # Convert to grayscale
+                img = Image.open(image_path).convert('L')  #Convert to grayscale
                 image_np = np.array(img, 'uint8')
                 filename = os.path.split(image_path)[1]
                 id = int(filename.split('.')[1])
